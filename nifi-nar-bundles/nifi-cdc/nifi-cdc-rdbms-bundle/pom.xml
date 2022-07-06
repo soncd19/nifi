@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>nifi-cdc</artifactId>
+        <groupId>org.apache.nifi</groupId>
+        <version>1.16.3</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>nifi-cdc-rdbms-bundle</artifactId>
+    <packaging>pom</packaging>
+    <description>NiFi CDC(MySQL, SQL Server, PostgresSQL, Oracle) Bundle</description>
+    <modules>
+        <module>nifi-cdc-rdbms-processors</module>
+        <module>nifi-cdc-rdbms-nar</module>
+    </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.nifi</groupId>
+                <artifactId>nifi-cdc-rdbms-processors</artifactId>
+                <version>1.16.3</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <properties>
+        <mysql-binlog-connector-java.version>0.20.0</mysql-binlog-connector-java.version>
+        <debezium-connector-mysql.version>1.0.3.Final</debezium-connector-mysql.version>
+        <debezium-embedded.version>1.0.3.Final</debezium-embedded.version>
+        <debezium-connector-oracle.version>1.0.3.Final</debezium-connector-oracle.version>
+        <debezium-connector-postgres.version>1.0.3.Final</debezium-connector-postgres.version>
+        <debezium-connector-sqlserver.version>1.0.3.Final</debezium-connector-sqlserver.version>
+        <debezium-connector-mongodb.version>1.0.3.Final</debezium-connector-mongodb.version>
+        <debezium-connector-cassandra.version>1.0.3.Final</debezium-connector-cassandra.version>
+        <kafka-connect.version>2.3.0</kafka-connect.version>
+    </properties>
+</project>
